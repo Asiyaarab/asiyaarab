@@ -13,17 +13,17 @@
 <style>
   :root{
     --bg: #FFFFFF;
-    --bg-card: #F4F7FB;
-    --ink: #0B1F3A;
-    --ink-soft: #384D6B;
-    --ink-faint: #5E7292;
-    --accent: #14315C;
-    --accent-deep: #081B33;
-    --accent-2: #2C5490;
-    --accent-tint: #E6ECF6;
-    --accent-2-tint: #EEF2F8;
-    --line: #DDE4EF;
-    --success: #14315C;
+    --bg-card: #EEF3FA; /* Enhanced contrast card background */
+    --ink: #08172D;     /* Deepened pure ink for maximum heading contrast */
+    --ink-soft: #253750;/* Crisper body text for effortless reading */
+    --ink-faint: #475C7A;/* Sharper secondary labels and tags */
+    --accent: #102A50;
+    --accent-deep: #061324;
+    --accent-2: #20457A;
+    --accent-tint: #DFE8F4;
+    --accent-2-tint: #E5EBF5;
+    --line: #C8D6EC;    /* Sharper borders for cleaner visual separation */
+    --success: #102A50;
     --radius: 18px;
     --maxw: 1180px;
   }
@@ -39,7 +39,7 @@
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
   }
-  h1,h2,h3,h4{ font-family:'Space Grotesk', sans-serif; letter-spacing:-0.01em; }
+  h1,h2,h3,h4{ font-family:'Space Grotesk', sans-serif; letter-spacing:-0.01em; color:var(--ink); }
   .mono{ font-family:'JetBrains Mono', monospace; }
   a{ color:inherit; text-decoration:none; }
   img{ max-width:100%; display:block; }
@@ -121,7 +121,7 @@
   nav{
     position:sticky; top:0; z-index:50;
     backdrop-filter: blur(10px);
-    background:rgba(246,247,251,0.82);
+    background:rgba(246,247,251,0.88);
     border-bottom:1px solid var(--line);
   }
   nav .wrap{ display:flex; align-items:center; justify-content:space-between; height:76px; gap:14px; }
@@ -172,7 +172,7 @@
   .hero .wrap{ display:grid; grid-template-columns: 1.05fr 0.95fr; gap:56px; align-items:center; }
   .eyebrow{
     display:inline-flex; align-items:center; gap:8px;
-    font-family:'JetBrains Mono'; font-size:0.78rem; font-weight:500; letter-spacing:0.02em;
+    font-family:'JetBrains Mono'; font-size:0.78rem; font-weight:600; letter-spacing:0.02em;
     color:var(--accent-deep); background:var(--accent-tint); padding:7px 14px; border-radius:100px;
     margin-bottom:22px;
   }
@@ -183,8 +183,8 @@
     font-family:'Source Serif 4', serif;
     font-size:clamp(2.5rem, 4.4vw, 3.6rem); font-weight:600; line-height:1.1; color:var(--ink); letter-spacing:-0.005em;
   }
-  .hero h1 .hl{ color:#14315C; position:relative; white-space:nowrap; }
-  .hero h1 .hl2{ color:#2C5490; font-weight:700; }
+  .hero h1 .hl{ color:#102A50; position:relative; white-space:nowrap; }
+  .hero h1 .hl2{ color:#20457A; font-weight:700; }
   .hero p.lede{
     margin-top:22px; font-size:1.13rem; color:var(--ink-soft); max-width:520px;
   }
@@ -194,7 +194,7 @@
     font-weight:600; font-size:0.94rem; transition:all 0.2s ease; border:1.5px solid transparent;
   }
   .btn-primary{ background:var(--ink); color:#fff; }
-  .btn-primary:hover{ background:var(--accent-deep); transform:translateY(-2px); box-shadow:0 10px 24px -8px rgba(79,61,245,0.5); }
+  .btn-primary:hover{ background:var(--accent-deep); transform:translateY(-2px); box-shadow:0 10px 24px -8px rgba(11,31,58,0.4); }
   .btn-ghost{ border-color:var(--line); color:var(--ink); background:var(--bg-card); }
   .btn-ghost:hover{ border-color:var(--ink); transform:translateY(-2px); }
 
@@ -216,7 +216,7 @@
   svg .plot-fill{ fill:url(#radarGrad); opacity:0.55; }
   svg .plot-line{ fill:none; stroke:var(--accent); stroke-width:2.5; stroke-linejoin:round; }
   svg .plot-dot{ fill:var(--accent); stroke:#fff; stroke-width:2; }
-  svg .axis-label{ font-family:'JetBrains Mono'; font-size:10.5px; fill:var(--ink-soft); }
+  svg .axis-label{ font-family:'JetBrains Mono'; font-size:10.5px; fill:var(--ink-soft); font-weight: 600; }
   .radar-legend{ display:flex; justify-content:space-between; margin-top:10px; padding-top:16px; border-top:1px dashed var(--line); }
   .radar-legend div{ text-align:center; }
   .radar-legend .n{ font-family:'Space Grotesk'; font-weight:700; font-size:1.05rem; color:var(--ink); }
@@ -234,10 +234,10 @@
   /* ---------- section headers ---------- */
   .sec-head{ max-width:640px; margin-bottom:56px; }
   .sec-eyebrow{
-    font-family:'JetBrains Mono'; font-size:0.78rem; color:var(--accent-2); font-weight:600;
+    font-family:'JetBrains Mono'; font-size:0.78rem; color:var(--accent-2); font-weight:700;
     text-transform:uppercase; letter-spacing:0.08em; margin-bottom:12px; display:block;
   }
-  .sec-head h2{ font-size:clamp(1.8rem,3vw,2.5rem); font-weight:700; }
+  .sec-head h2{ font-size:clamp(1.8rem,3vw,2.5rem); font-weight:700; color:var(--ink); }
   .sec-head p{ color:var(--ink-soft); margin-top:14px; font-size:1.03rem; }
 
   /* ---------- about ---------- */
@@ -251,7 +251,7 @@
   .stat-box .src{
     font-family:'JetBrains Mono'; font-size:0.68rem; color:var(--ink-faint);
     margin-top:8px; padding-top:8px; border-top:1px dashed var(--line);
-    text-transform:uppercase; letter-spacing:0.03em;
+    text-transform:uppercase; letter-spacing:0.03em; font-weight: 500;
   }
 
   /* ---------- experience timeline ---------- */
@@ -264,16 +264,16 @@
   }
   .tl-item.current::before{ background:var(--accent); box-shadow:0 0 0 5px var(--accent-tint); }
   .tl-head{ display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:10px; margin-bottom:8px; }
-  .tl-role{ font-family:'Space Grotesk'; font-size:1.2rem; font-weight:700; }
-  .tl-date{ font-family:'JetBrains Mono'; font-size:0.78rem; color:var(--ink-faint); }
-  .tl-company{ color:var(--accent-deep); font-weight:600; font-size:0.94rem; margin-bottom:12px; }
+  .tl-role{ font-family:'Space Grotesk'; font-size:1.2rem; font-weight:700; color:var(--ink); }
+  .tl-date{ font-family:'JetBrains Mono'; font-size:0.78rem; color:var(--ink-faint); font-weight:600; }
+  .tl-company{ color:var(--accent-deep); font-weight:700; font-size:0.94rem; margin-bottom:12px; }
   .tl-item ul{ list-style:none; }
   .tl-item li{ color:var(--ink-soft); font-size:0.96rem; padding-left:20px; position:relative; margin-bottom:8px; }
   .tl-item li::before{ content:'—'; position:absolute; left:0; color:var(--ink-faint); }
   .status-pill{
-    font-family:'JetBrains Mono'; font-size:0.7rem; padding:4px 10px; border-radius:100px; font-weight:500;
+    font-family:'JetBrains Mono'; font-size:0.7rem; padding:4px 10px; border-radius:100px; font-weight:600;
   }
-  .status-pill.live{ background:#E6ECF6; color:var(--success); }
+  .status-pill.live{ background:var(--accent-tint); color:var(--success); }
   .status-pill.done{ background:var(--accent-tint); color:var(--accent-deep); }
 
   /* ---------- projects ---------- */
@@ -283,19 +283,19 @@
     padding:28px; transition:transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     display:flex; flex-direction:column; gap:18px;
   }
-  .proj-card:hover{ transform:translateY(-6px); box-shadow:0 30px 50px -26px rgba(19,20,31,0.22); border-color:var(--accent); }
+  .proj-card:hover{ transform:translateY(-6px); box-shadow:0 30px 50px -26px rgba(11,31,58,0.22); border-color:var(--accent); }
   .proj-visual{ height:150px; border-radius:12px; background:var(--accent-tint); display:flex; align-items:center; justify-content:center; overflow:hidden; }
   .proj-card:nth-child(2) .proj-visual, .proj-card:nth-child(4) .proj-visual{ background:var(--accent-2-tint); }
   .proj-top{ display:flex; justify-content:space-between; align-items:flex-start; }
-  .proj-name{ font-family:'Space Grotesk'; font-size:1.28rem; font-weight:700; }
-  .proj-tag{ font-family:'JetBrains Mono'; font-size:0.68rem; color:var(--ink-faint); margin-top:4px; }
+  .proj-name{ font-family:'Space Grotesk'; font-size:1.28rem; font-weight:700; color:var(--ink); }
+  .proj-tag{ font-family:'JetBrains Mono'; font-size:0.68rem; color:var(--ink-faint); margin-top:4px; font-weight:600; }
   .proj-desc{ color:var(--ink-soft); font-size:0.95rem; flex-grow:1; }
   .proj-stack{ display:flex; flex-wrap:wrap; gap:8px; }
   .chip{
     font-family:'JetBrains Mono'; font-size:0.7rem; padding:5px 10px; border-radius:8px;
-    background:var(--bg); border:1px solid var(--line); color:var(--ink-soft);
+    background:var(--bg); border:1px solid var(--line); color:var(--ink-soft); font-weight:500;
   }
-  .proj-link{ display:flex; align-items:center; gap:6px; font-weight:600; font-size:0.88rem; color:var(--accent-deep); margin-top:2px; }
+  .proj-link{ display:flex; align-items:center; gap:6px; font-weight:700; font-size:0.88rem; color:var(--accent-deep); margin-top:2px; }
   .proj-link .arrow{ transition:transform 0.2s ease; }
   .proj-card:hover .proj-link .arrow{ transform:translateX(4px); }
 
@@ -309,14 +309,14 @@
     content:''; position:absolute; width:320px; height:320px; border-radius:50%;
     background:radial-gradient(circle, rgba(255,90,54,0.22), transparent 70%); bottom:-140px; left:-100px;
   }
-  .skills-panel .sec-eyebrow{ color:#A9C2E6; }
+  .skills-panel .sec-eyebrow{ color:#C3D7F5; }
   .skills-panel h2{ color:#fff; position:relative; z-index:2; }
   .skill-cats{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:36px; margin-top:44px; position:relative; z-index:2; }
-  .skill-cat h4{ font-size:0.78rem; font-family:'JetBrains Mono'; color:#7C93B5; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:16px; font-weight:500; }
+  .skill-cat h4{ font-size:0.78rem; font-family:'JetBrains Mono'; color:#A4BDE0; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:16px; font-weight:600; }
   .skill-list{ display:flex; flex-wrap:wrap; gap:9px; }
   .skill-list span{
-    font-size:0.85rem; padding:8px 14px; border-radius:100px; background:rgba(255,255,255,0.07);
-    border:1px solid rgba(255,255,255,0.14); transition:all 0.2s ease;
+    font-size:0.85rem; padding:8px 14px; border-radius:100px; background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.18); transition:all 0.2s ease; color:#F0F4FA;
   }
   .skill-list span:hover{ background:var(--accent); border-color:var(--accent); transform:translateY(-2px); }
 
@@ -331,8 +331,8 @@
       radial-gradient(circle at 80% 80%, rgba(255,90,54,0.28), transparent 50%);
   }
   .contact-card > *{ position:relative; z-index:2; }
-  .contact-card h2{ font-size:clamp(1.9rem,3.6vw,2.7rem); color:#fff; max-width:640px; margin:0 auto; }
-  .contact-card p{ color:rgba(255,255,255,0.82); margin-top:16px; font-size:1.05rem; }
+  .contact-card h2{ font-size:clamp(1.9rem,3.6vw,2.7rem); color:#FFFFFF; max-width:640px; margin:0 auto; font-weight: 700; }
+  .contact-card p{ color:#EAF1FB; margin-top:16px; font-size:1.08rem; line-height: 1.6; }
   .contact-actions{ display:flex; justify-content:center; gap:14px; margin-top:34px; flex-wrap:wrap; }
   .contact-card .btn-primary{ background:#fff; color:var(--accent-deep); }
   .contact-card .btn-primary:hover{ background:#EAF0F8; box-shadow:0 10px 24px -8px rgba(0,0,0,0.25); }
@@ -343,21 +343,21 @@
   .contact-form .form-row{ display:flex; gap:12px; margin-bottom:12px; }
   .contact-form input,
   .contact-form textarea{
-    width:100%; padding:14px 16px; border-radius:12px; border:1.5px solid rgba(255,255,255,0.35);
-    background:rgba(11,31,58,0.35); color:#fff; font-family:'Inter', sans-serif; font-size:0.94rem;
+    width:100%; padding:14px 16px; border-radius:12px; border:1.5px solid rgba(255,255,255,0.4);
+    background:rgba(6,19,36,0.5); color:#fff; font-family:'Inter', sans-serif; font-size:0.94rem;
     resize:vertical; margin-bottom:12px;
   }
   .contact-form input::placeholder,
-  .contact-form textarea::placeholder{ color:#B3C8E4; opacity:1; }
+  .contact-form textarea::placeholder{ color:#C3D7F5; opacity:1; }
   .contact-form input:focus,
-  .contact-form textarea:focus{ outline:none; border-color:#fff; background:rgba(11,31,58,0.55); }
+  .contact-form textarea:focus{ outline:none; border-color:#fff; background:rgba(6,19,36,0.75); }
   .form-status{ margin-top:12px; font-size:0.85rem; min-height:20px; }
   .form-status.ok{ color:#DCE8F5; }
   .form-status.err{ color:#D9E3F0; }
   @media (max-width:560px){ .contact-form .form-row{ flex-direction:column; gap:0; } }
 
   footer{ padding:44px 0 60px; }
-  .foot-row{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; color:var(--ink-faint); font-size:0.85rem; }
+  .foot-row{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; color:var(--ink-faint); font-size:0.85rem; font-weight: 500; }
   .foot-links{ display:flex; gap:22px; }
   .foot-links a:hover{ color:var(--ink); }
 
@@ -478,7 +478,7 @@
         <a class="btn btn-ghost" href="https://github.com/Asiyaarab" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
       <div class="meta-row">
-        <span class="meta-item"><b>Ahmedabad, India</b> · Remote </span>
+        <span class="meta-item"><b>Ahmedabad, India</b> · Remote</span>
         <span class="meta-item"><b>BCA</b> · Shreyarth University, 2026</span>
       </div>
     </div>
@@ -493,8 +493,8 @@
       <svg viewBox="0 0 320 300" width="100%" height="240">
         <defs>
           <linearGradient id="radarGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#14315C"/>
-            <stop offset="100%" stop-color="#2C5490"/>
+            <stop offset="0%" stop-color="#102A50"/>
+            <stop offset="100%" stop-color="#20457A"/>
           </linearGradient>
         </defs>
         <circle class="ring" cx="160" cy="140" r="40"/>
@@ -532,7 +532,7 @@
         <span class="sec-eyebrow">01 / About</span>
         <h2 style="margin-bottom:22px;">Hands-on AI engineering, from data modeling to production.</h2>
         <p>I am a <strong>Junior AI/ML Engineer</strong> at <strong>Webify.ai</strong> focusing on modern natural language processing, vector retrieval, and multi-agent workflows.</p>
-        <p>My technical focus spans <strong>supervised learning, NLP pipelines, and retrieval-augmented generation (RAG)</strong>. I bridges the gap between machine learning models in notebooks and scalable services that deliver clear production value.</p>
+        <p>My technical focus spans <strong>supervised learning, NLP pipelines, and retrieval-augmented generation (RAG)</strong>. I bridge the gap between machine learning models in notebooks and scalable services that deliver clear production value.</p>
       </div>
       <div class="stat-grid reveal">
         <div class="stat-box">
@@ -616,10 +616,10 @@
       <div class="proj-card reveal">
         <div class="proj-visual">
           <svg width="220" height="120" viewBox="0 0 220 120">
-            <polyline points="10,90 45,60 80,75 115,30 150,45 185,15" fill="none" stroke="#14315C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="185" cy="15" r="5" fill="#2C5490"/>
-            <circle cx="115" cy="30" r="4" fill="#14315C"/>
-            <text x="10" y="112" font-family="JetBrains Mono" font-size="7.5" fill="#435875">CONTENT · SCHEMA · CONVERSATIONAL · ENTITY</text>
+            <polyline points="10,90 45,60 80,75 115,30 150,45 185,15" fill="none" stroke="#102A50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="185" cy="15" r="5" fill="#20457A"/>
+            <circle cx="115" cy="30" r="4" fill="#102A50"/>
+            <text x="10" y="112" font-family="JetBrains Mono" font-size="7.5" fill="#354A6B" font-weight="600">CONTENT · SCHEMA · CONVERSATIONAL · ENTITY</text>
           </svg>
         </div>
         <div class="proj-top">
@@ -635,15 +635,15 @@
       <div class="proj-card reveal">
         <div class="proj-visual">
           <svg width="220" height="120" viewBox="0 0 220 120">
-            <circle cx="110" cy="60" r="14" fill="#2C5490"/>
-            <circle cx="45" cy="30" r="9" fill="#fff" stroke="#2C5490" stroke-width="2"/>
-            <circle cx="45" cy="90" r="9" fill="#fff" stroke="#2C5490" stroke-width="2"/>
-            <circle cx="175" cy="30" r="9" fill="#fff" stroke="#2C5490" stroke-width="2"/>
-            <circle cx="175" cy="90" r="9" fill="#fff" stroke="#2C5490" stroke-width="2"/>
-            <line x1="110" y1="60" x2="45" y2="30" stroke="#2C5490" stroke-width="1.5" opacity="0.5"/>
-            <line x1="110" y1="60" x2="45" y2="90" stroke="#2C5490" stroke-width="1.5" opacity="0.5"/>
-            <line x1="110" y1="60" x2="175" y2="30" stroke="#2C5490" stroke-width="1.5" opacity="0.5"/>
-            <line x1="110" y1="60" x2="175" y2="90" stroke="#2C5490" stroke-width="1.5" opacity="0.5"/>
+            <circle cx="110" cy="60" r="14" fill="#20457A"/>
+            <circle cx="45" cy="30" r="9" fill="#fff" stroke="#20457A" stroke-width="2"/>
+            <circle cx="45" cy="90" r="9" fill="#fff" stroke="#20457A" stroke-width="2"/>
+            <circle cx="175" cy="30" r="9" fill="#fff" stroke="#20457A" stroke-width="2"/>
+            <circle cx="175" cy="90" r="9" fill="#fff" stroke="#20457A" stroke-width="2"/>
+            <line x1="110" y1="60" x2="45" y2="30" stroke="#20457A" stroke-width="1.5" opacity="0.6"/>
+            <line x1="110" y1="60" x2="45" y2="90" stroke="#20457A" stroke-width="1.5" opacity="0.6"/>
+            <line x1="110" y1="60" x2="175" y2="30" stroke="#20457A" stroke-width="1.5" opacity="0.6"/>
+            <line x1="110" y1="60" x2="175" y2="90" stroke="#20457A" stroke-width="1.5" opacity="0.6"/>
           </svg>
         </div>
         <div class="proj-top">
@@ -659,11 +659,11 @@
       <div class="proj-card reveal">
         <div class="proj-visual">
           <svg width="220" height="120" viewBox="0 0 220 120">
-            <rect x="20" y="70" width="20" height="30" fill="#14315C"/>
-            <rect x="55" y="50" width="20" height="50" fill="#14315C"/>
-            <rect x="90" y="60" width="20" height="40" fill="#14315C"/>
-            <rect x="125" y="35" width="20" height="65" fill="#14315C"/>
-            <rect x="160" y="20" width="20" height="80" fill="#2C5490"/>
+            <rect x="20" y="70" width="20" height="30" fill="#102A50"/>
+            <rect x="55" y="50" width="20" height="50" fill="#102A50"/>
+            <rect x="90" y="60" width="20" height="40" fill="#102A50"/>
+            <rect x="125" y="35" width="20" height="65" fill="#102A50"/>
+            <rect x="160" y="20" width="20" height="80" fill="#20457A"/>
           </svg>
         </div>
         <div class="proj-top">
@@ -679,10 +679,10 @@
       <div class="proj-card reveal">
         <div class="proj-visual">
           <svg width="220" height="120" viewBox="0 0 220 120">
-            <path d="M20,60 A90,90 0 0 1 200,60" fill="none" stroke="#DDE4EF" stroke-width="14" stroke-linecap="round"/>
-            <path d="M20,60 A90,90 0 0 1 150,20" fill="none" stroke="#2C5490" stroke-width="14" stroke-linecap="round"/>
-            <circle cx="150" cy="20" r="7" fill="#0B1F3A"/>
-            <text x="110" y="65" font-family="Space Grotesk" font-weight="700" font-size="18" fill="#0B1F3A" text-anchor="middle">72% pos</text>
+            <path d="M20,60 A90,90 0 0 1 200,60" fill="none" stroke="#C8D6EC" stroke-width="14" stroke-linecap="round"/>
+            <path d="M20,60 A90,90 0 0 1 150,20" fill="none" stroke="#20457A" stroke-width="14" stroke-linecap="round"/>
+            <circle cx="150" cy="20" r="7" fill="#08172D"/>
+            <text x="110" y="65" font-family="Space Grotesk" font-weight="700" font-size="18" fill="#08172D" text-anchor="middle">72% pos</text>
           </svg>
         </div>
         <div class="proj-top">
@@ -698,12 +698,12 @@
       <div class="proj-card reveal">
         <div class="proj-visual">
           <svg width="220" height="120" viewBox="0 0 220 120">
-            <rect x="20" y="24" width="150" height="10" rx="5" fill="#14315C"/>
-            <rect x="20" y="46" width="118" height="10" rx="5" fill="#2C5490"/>
-            <rect x="20" y="68" width="86" height="10" rx="5" fill="#2C5490" opacity="0.65"/>
-            <rect x="20" y="90" width="54" height="10" rx="5" fill="#2C5490" opacity="0.4"/>
-            <line x1="150" y1="14" x2="150" y2="106" stroke="#0B1F3A" stroke-width="1.5" stroke-dasharray="3,3"/>
-            <text x="152" y="12" font-family="JetBrains Mono" font-size="7.5" fill="#435875">HIRE ≥70</text>
+            <rect x="20" y="24" width="150" height="10" rx="5" fill="#102A50"/>
+            <rect x="20" y="46" width="118" height="10" rx="5" fill="#20457A"/>
+            <rect x="20" y="68" width="86" height="10" rx="5" fill="#20457A" opacity="0.65"/>
+            <rect x="20" y="90" width="54" height="10" rx="5" fill="#20457A" opacity="0.4"/>
+            <line x1="150" y1="14" x2="150" y2="106" stroke="#08172D" stroke-width="1.5" stroke-dasharray="3,3"/>
+            <text x="152" y="12" font-family="JetBrains Mono" font-size="7.5" fill="#354A6B" font-weight="600">HIRE ≥70</text>
           </svg>
         </div>
         <div class="proj-top">
@@ -719,18 +719,18 @@
       <div class="proj-card reveal">
         <div class="proj-visual">
           <svg width="220" height="120" viewBox="0 0 220 120">
-            <rect x="18" y="18" width="18" height="18" rx="3" fill="#2C5490" opacity="0.55"/>
-            <rect x="52" y="18" width="18" height="18" rx="3" fill="#2C5490" opacity="0.75"/>
-            <rect x="86" y="18" width="18" height="18" rx="3" fill="#14315C"/>
-            <rect x="120" y="18" width="18" height="18" rx="3" fill="#2C5490" opacity="0.75"/>
-            <rect x="154" y="18" width="18" height="18" rx="3" fill="#2C5490" opacity="0.55"/>
-            <line x1="27" y1="36" x2="105" y2="78" stroke="#2C5490" stroke-width="1.5" opacity="0.5"/>
-            <line x1="61" y1="36" x2="105" y2="78" stroke="#2C5490" stroke-width="1.5" opacity="0.5"/>
-            <line x1="95" y1="36" x2="105" y2="78" stroke="#14315C" stroke-width="1.5"/>
-            <line x1="129" y1="36" x2="105" y2="78" stroke="#2C5490" stroke-width="1.5" opacity="0.5"/>
-            <line x1="163" y1="36" x2="105" y2="78" stroke="#2C5490" stroke-width="1.5" opacity="0.5"/>
-            <circle cx="105" cy="86" r="12" fill="#0B1F3A"/>
-            <text x="105" y="106" font-family="JetBrains Mono" font-size="7.5" fill="#435875" text-anchor="middle">TOP-5 CHUNKS → ANSWER</text>
+            <rect x="18" y="18" width="18" height="18" rx="3" fill="#20457A" opacity="0.55"/>
+            <rect x="52" y="18" width="18" height="18" rx="3" fill="#20457A" opacity="0.75"/>
+            <rect x="86" y="18" width="18" height="18" rx="3" fill="#102A50"/>
+            <rect x="120" y="18" width="18" height="18" rx="3" fill="#20457A" opacity="0.75"/>
+            <rect x="154" y="18" width="18" height="18" rx="3" fill="#20457A" opacity="0.55"/>
+            <line x1="27" y1="36" x2="105" y2="78" stroke="#20457A" stroke-width="1.5" opacity="0.6"/>
+            <line x1="61" y1="36" x2="105" y2="78" stroke="#20457A" stroke-width="1.5" opacity="0.6"/>
+            <line x1="95" y1="36" x2="105" y2="78" stroke="#102A50" stroke-width="1.5"/>
+            <line x1="129" y1="36" x2="105" y2="78" stroke="#20457A" stroke-width="1.5" opacity="0.6"/>
+            <line x1="163" y1="36" x2="105" y2="78" stroke="#20457A" stroke-width="1.5" opacity="0.6"/>
+            <circle cx="105" cy="86" r="12" fill="#08172D"/>
+            <text x="105" y="106" font-family="JetBrains Mono" font-size="7.5" fill="#354A6B" font-weight="600" text-anchor="middle">TOP-5 CHUNKS → ANSWER</text>
           </svg>
         </div>
         <div class="proj-top">
@@ -746,16 +746,16 @@
       <div class="proj-card reveal">
         <div class="proj-visual">
           <svg width="220" height="120" viewBox="0 0 220 120">
-            <rect x="20" y="30" width="70" height="60" rx="6" fill="none" stroke="#DDE4EF" stroke-width="3"/>
-            <rect x="30" y="42" width="50" height="6" rx="3" fill="#2C5490" opacity="0.4"/>
-            <rect x="30" y="54" width="35" height="6" rx="3" fill="#2C5490" opacity="0.4"/>
-            <rect x="30" y="66" width="45" height="6" rx="3" fill="#2C5490" opacity="0.4"/>
-            <path d="M100,60 L134,60" stroke="#14315C" stroke-width="3" stroke-linecap="round"/>
-            <path d="M125,52 L135,60 L125,68" fill="none" stroke="#14315C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            <rect x="150" y="20" width="55" height="70" rx="6" fill="#14315C"/>
+            <rect x="20" y="30" width="70" height="60" rx="6" fill="none" stroke="#C8D6EC" stroke-width="3"/>
+            <rect x="30" y="42" width="50" height="6" rx="3" fill="#20457A" opacity="0.4"/>
+            <rect x="30" y="54" width="35" height="6" rx="3" fill="#20457A" opacity="0.4"/>
+            <rect x="30" y="66" width="45" height="6" rx="3" fill="#20457A" opacity="0.4"/>
+            <path d="M100,60 L134,60" stroke="#102A50" stroke-width="3" stroke-linecap="round"/>
+            <path d="M125,52 L135,60 L125,68" fill="none" stroke="#102A50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="150" y="20" width="55" height="70" rx="6" fill="#102A50"/>
             <rect x="160" y="32" width="35" height="6" rx="3" fill="#fff" opacity="0.85"/>
             <rect x="160" y="44" width="35" height="6" rx="3" fill="#fff" opacity="0.6"/>
-            <circle cx="195" cy="75" r="9" fill="#2C5490"/>
+            <circle cx="195" cy="75" r="9" fill="#20457A"/>
             <path d="M191,75 l3,3 l6,-7" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
@@ -812,8 +812,10 @@
   <div class="wrap">
     <div class="contact-card reveal">
       <span class="eyebrow" style="background:rgba(255,255,255,0.16); color:#fff;"><span class="pulse" style="background:#fff;"></span>AVAILABLE FOR AI/ML ROLES</span>
-      <h2>Let's build intelligent products together.</h2>
-      <p>Ahmedabad, India · Open to remote roles</p>
+      
+      <h2>Have an AI/ML project or opportunity in mind?</h2>
+      <p>Let’s connect and explore how I can contribute with practical AI/ML solutions across NLP, Generative AI, RAG, and automation.</p>
+      <p style="color:rgba(255,255,255,0.78); margin-top:10px; font-size:0.95rem;">Ahmedabad, India · Open to remote AI/ML roles worldwide</p>
 
       <form id="contactForm" class="contact-form" action="https://formspree.io/f/xwlebeey" method="POST">
         <div class="form-row">
@@ -825,7 +827,7 @@
         <p id="formStatus" class="form-status"></p>
       </form>
 
-      <p style="margin-top:22px; font-size:0.85rem;">Or email directly at <a href="mailto:aashiyaarab39@gmail.com" style="text-decoration:underline;">aashiyaarab39@gmail.com</a></p>
+      <p style="margin-top:22px; font-size:0.85rem; color:rgba(255,255,255,0.9);">Or email directly at <a href="mailto:aashiyaarab39@gmail.com" style="text-decoration:underline; color:#FFFFFF; font-weight:600;">aashiyaarab39@gmail.com</a></p>
     </div>
   </div>
 </section>
